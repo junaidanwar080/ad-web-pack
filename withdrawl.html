@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawal Request</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href=".\withdrawl.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="container">
+            <div class="row logo">
+                <div class="col-md-6 text-left">
+                    <img src="https://via.placeholder.com/150x50?text=Adwebpack+Logo" alt="Adwebpack Logo">
+                </div>
+                <div class="col-md-6 text-right contact-info" style="margin-right: -391px;">
+                    <i class="fas fa-phone-alt"></i> +91 8586020109
+                    <div class="social-icons">
+                        <a href="#"><i class="fas fa-facebook-square"></i></a>
+                        <a href="#"><i class="fas fa-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="dashboard.html">Account Activity</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="financeDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Finance
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="financeDropdown">
+                        <a class="dropdown-item" href="add-fund.html">Add Funds</a>
+                        <a class="dropdown-item" href="plans-list.html">Purchase Position</a>
+                        <a class="dropdown-item" href="#">Earning History</a>
+                        <a class="dropdown-item" href="paymnet-history.html">Payment History</a>
+                        <a class="dropdown-item" href="withdrawl.html">Request Withdrawal</a>
+                        <a class="dropdown-item" href="withdrawl-history.html">Withdrawal History</a>
+                        <a class="dropdown-item" href="#">Balance Transfer</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Advertisement</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Member Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Promo Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Other</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger text-white" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="invoice-container">
+        <header class="invoice-header">
+            <h1>Request Withdrawal</h1>
+        </header>
+
+        <div class="invoice-body">
+            <section class="details-section">
+                <div class="section-content">
+                    <p><strong class="check">Amount: <input type="text"></strong></p><br>
+                    <p><strong>Payment Processor:</strong><input type="text" value="Coin Payment" disabled></p><br>
+                    <p><strong>Payment Processor Id:</strong> <input type="text" value="#4567890" disabled></p><br>
+                    <p><strong>Balance:</strong>
+                        <select name="Balance">
+                            <option value="earning">Earning Balance</option>
+                        </select>
+                    </p><br>
+                    <p><strong>Withdrawal Fees:</strong><input type="text" value="$0 USD" disabled></p><br>
+                    <p><strong>Receivable (After deducting fee):</strong><input type="text" value="$0 USD" disabled></p>
+                </div>
+            </section>
+
+            <section class="limits-section">
+                <div class="section-content">
+                    <p class="daily-limit"><strong>Daily Limit:</strong> $1,000</p><br>
+                    <p><strong>Weekly Limit:</strong> $5,000</p><br>
+                    <p><strong>Monthly Limit:</strong> $20,000.00</p><br><br>
+                </div>
+                <button class="btn">Submit</button>
+            </section>
+        </div>
+
+
+
+        <header class="invoice-header">
+            <h1 style="background-color: orange;">Current Balance</h1>
+        </header>
+
+        <section class="balance-details">
+            <div class="balance-row">
+                <span class="balance-label">Cash Balance:</span>
+                <span class="balance-value">$5,000.00</span>
+            </div>
+            <div class="balance-row">
+                <span class="balance-label">Earning Balance:</span>
+                <span class="balance-value">$1,200.00</span>
+            </div>
+            <div class="balance-row">
+                <span class="balance-label">Re-Purchase Balance:</span>
+                <span class="balance-value">$750.00</span>
+            </div>
+            <div class="balance-row">
+                <span class="balance-label">Commission Balance:</span>
+                <span class="balance-value">$300.00</span>
+            </div>
+        </section>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="row">
+                <!-- Stat 1 -->
+                <div class="col-md-2 stat-box">
+                    <i class="fas fa-calendar-day"></i>
+                    <h5>Launch Date</h5>
+                    <p>September 25, 2016</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="col-md-2 stat-box">
+                    <i class="fas fa-users"></i>
+                    <h5>Total Members</h5>
+                    <p>4792</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="col-md-2 stat-box">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h5>Total Payouts</h5>
+                    <p>$64128.48</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="col-md-2 stat-box">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h5>Last Payout</h5>
+                    <p>$20</p>
+                </div>
+
+                <!-- Stat 5 -->
+                <div class="col-md-2 stat-box">
+                    <i class="fas fa-chart-line"></i>
+                    <h5>Commission Paid</h5>
+                    <p>40804.92</p>
+                </div>
+
+                <!-- Stat 6 -->
+                <div class="col-md-2 stat-box">
+                    <i class="fas fa-chart-bar"></i>
+                    <h5>Alexa Rank</h5>
+                    <p>62651</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- Traffic Income -->
+                <div class="col-md-4 footer-box">
+                    <i class="fas fa-globe"></i>
+                    <h5>Ad Web Pack</h5>
+                    <p>Earnings Disclaimer</p>
+                </div>
+
+                <!-- Safety -->
+                <div class="col-md-4 footer-box">
+                    <h5>SAFETY</h5>
+                    <p><i class="fas fa-certificate"></i> Registered Business Entity</p>
+                    <p><i class="fas fa-lock"></i> SSL Secured and Licensed Script</p>
+                    <p><i class="fas fa-shield-alt"></i> DDOS Protected Hosting</p>
+                </div>
+
+                <!-- We Accept -->
+                <div class="col-md-4 footer-box">
+                    <h5>WE ACCEPT</h5>
+                    <div class="payment-icons">
+                        <img src="https://via.placeholder.com/100x30?text=Payza" alt="Payza">
+                        <img src="https://via.placeholder.com/100x30?text=Paypal" alt="Paypal">
+                        <img src="https://via.placeholder.com/100x30?text=Payeer" alt="Payeer">
+                        <img src="https://via.placeholder.com/100x30?text=Perfect+Money" alt="Perfect Money">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+        <div class="container">
+            <p>Copyright © 2024 Adwebpack.com. All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

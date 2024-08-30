@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Overview</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .info-box {
+            padding: 20px;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .info-box.orange {
+            background-color: #ffc107;
+        }
+        .info-box.blue {
+            background-color: #007bff;
+        }
+        .info-box i {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .info-box p {
+            margin: 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="grid-container">
+                <!-- Active Shares -->
+                <div class="info-box orange">
+                    <i class="fas fa-chart-pie"></i>
+                    <p>Active Shares</p>
+                    <p>50</p>
+                </div>
+                
+                <!-- My Sponsor -->
+                <div class="info-box blue">
+                    <i class="fas fa-user-tie"></i>
+                    <p>My Sponsor</p>
+                    <p>thetrafficincomeadmin</p>
+                </div>
+
+                <!-- My Referrals -->
+                <div class="info-box blue">
+                    <i class="fas fa-users"></i>
+                    <p>My Referrals</p>
+                    <p>3</p>
+                </div>
+
+                <!-- Cash Balance -->
+                <div class="info-box orange">
+                    <i class="fas fa-wallet"></i>
+                    <p>Cash Balance</p>
+                    <p>$1,000 USD</p>
+                </div>
+
+                <!-- Earning Balance -->
+                <div class="info-box blue">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <p>Earning Balance</p>
+                    <p>$919.15 USD</p>
+                </div>
+
+                <!-- Repurchase Balance -->
+                <div class="info-box orange">
+                    <i class="fas fa-redo"></i>
+                    <p>Repurchase Balance</p>
+                    <p>$919.15 USD</p>
+                </div>
+
+                <!-- Commission Balance -->
+                <div class="info-box orange">
+                    <i class="fas fa-coins"></i>
+                    <p>Commission Balance</p>
+                    <p>$6,170 USD</p>
+                </div>
+
+                <!-- Total Deposit -->
+                <div class="info-box blue">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <p>Total Deposit</p>
+                    <p>$23.00 USD</p>
+                </div>
+
+                <!-- Total Withdraw -->
+                <div class="info-box blue">
+                    <i class="fas fa-hand-holding"></i>
+                    <p>Total Withdraw</p>
+                    <p>$1,000 USD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

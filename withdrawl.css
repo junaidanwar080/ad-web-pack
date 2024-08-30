@@ -1,0 +1,211 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+} */
+
+.invoice-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header {
+    text-align:left;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.invoice-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #fff;
+    background-color: blue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.invoice-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-section {
+    width: 50%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-right: none;
+}
+
+.limits-section {
+    width: 50%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    padding-left: 40px;
+}
+
+.section-content {
+    margin-bottom: 10px;
+}
+
+.section-content p {
+    margin: 5px 0;
+}
+
+select {
+    margin-left: 10px;
+}
+
+input[type="text"] {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+
+.limits-section .daily-limit {
+    color:none; 
+    
+}
+
+.limits-section .monthly-limit {
+    color:none;
+
+}
+
+button.btn {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    float : right;
+
+}
+.balance-details {
+    margin: 20px 0;
+}
+
+.balance-row {
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.balance-row:last-child {
+    border-bottom: none;
+}
+
+.balance-label {
+
+    font-weight: bold;
+}
+
+.balance-value {
+    color: #333;
+}
+
+.invoice-footer {
+    border-top: 2px solid #eee;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+}
+.header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .contact-info {
+    display: flex;
+    align-items: center;
+}
+.header .contact-info i {
+    margin-right: 5px;
+}
+.header .social-icons i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+.navbar {
+    margin-top: 10px;
+}
+.stats-section {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+}
+.stats-section .stat-box {
+    text-align: center;
+    padding: 15px;
+}
+.stats-section .stat-box i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffc107;
+}
+.stats-section .stat-box h5 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.stats-section .stat-box p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+}
+.footer-section {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+}
+.footer-section .footer-box {
+    text-align: center;
+    padding: 15px;
+}
+.footer-section .footer-box i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+.footer-section .footer-box h5 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.footer-section .footer-box p {
+    font-size: 0.875rem;
+    color: #b0b0b0;
+}
+.footer-section .payment-icons img {
+    height: 30px;
+    margin: 5px;
+}
+.footer-bottom {
+    background-color: #2c2c2c;
+    color: #ccc;
+    padding: 10px 0;
+    text-align: center;
+}

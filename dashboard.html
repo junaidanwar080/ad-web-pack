@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Income Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .contact-info {
+            display: flex;
+            align-items: center;
+        }
+        .header .contact-info i {
+            margin-right: 5px;
+        }
+        .header .social-icons i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+        .navbar {
+            margin-top: 10px;
+        }
+        .stats-section {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        .stats-section .stat-box {
+            text-align: center;
+            padding: 15px;
+        }
+        .stats-section .stat-box i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+        .stats-section .stat-box h5 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        .stats-section .stat-box p {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .user-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .user-info h5 {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            margin: 0 0 20px;
+        }
+        .server-time {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .user-details {
+            font-size: 0.9rem;
+        }
+        .user-details p {
+            margin: 0;
+        }
+        .action-buttons .btn {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: bold;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+        .action-buttons .btn i {
+            float: right;
+            font-size: 1.2rem;
+        }
+        .btn-info {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            color: black;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            color: white;
+        }
+        .info-box {
+            padding: 20px;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .info-box.orange {
+            background-color: #ffc107;
+        }
+        .info-box.blue {
+            background-color: #007bff;
+        }
+        .info-box i {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .info-box p {
+            margin: 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .table thead th {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+        }
+        .table tbody td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        .table tfoot {
+            background-color: #343a40;
+            color: white;
+        }
+        .table tfoot td {
+            font-weight: bold;
+            text-align: center;
+        }
+        .icon-placeholder {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: #007bff;
+            border-radius: 3px;
+            color: white;
+            line-height: 24px;
+            text-align: center;
+        }
+        .footer-section {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        .footer-section .footer-box {
+            text-align: center;
+            padding: 15px;
+        }
+        .footer-section .footer-box i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        .footer-section .footer-box h5 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        .footer-section .footer-box p {
+            font-size: 0.875rem;
+            color: #b0b0b0;
+        }
+        .footer-section .payment-icons img {
+            height: 30px;
+            margin: 5px;
+        }
+        .footer-bottom {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<div class="header">
+    <div class="container">
+        <div class="row logo">
+            <div class="col-md-6 text-left">
+                <img src="https://via.placeholder.com/150x50?text=Adwebpack+Logo" alt="Adwebpack Logo">
+            </div>
+            <div class="col-md-6 text-right contact-info"style="margin-right: -391px;">
+                <i class="fas fa-phone-alt"></i> +91 8586020109
+                <div class="social-icons">
+                    <a href="#"><i class="fas fa-facebook-square"></i></a>
+                    <a href="#"><i class="fas fa-skype"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="dashboard.html">Account Activity</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="financeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Finance
+                </a>
+                <div class="dropdown-menu" aria-labelledby="financeDropdown">
+                  <a class="dropdown-item" href="add-fund.html">Add Funds</a>
+                  <a class="dropdown-item" href="plans-list.html">Purchase Position</a>
+                  <a class="dropdown-item" href="#">Earning History</a>
+                  <a class="dropdown-item" href="paymnet-history.html">Payment History</a>
+                  <a class="dropdown-item" href="withdrawl.html">Request Withdrawal</a>
+                  <a class="dropdown-item" href="withdrawl-history.html">Withdrawal History</a>
+                  <a class="dropdown-item" href="#">Balance Transfer</a>
+                </div>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Advertisement</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Member Tools</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Promo Tools</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Other</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Overview</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-danger text-white" href="#">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row" style="margin-top: 10px;">
+        <!-- User Information Section -->
+        <div class="col-md-8 user-info">
+            <h5>Welcome, Amir Nazir</h5>
+            <div class="user-details">
+                <p><strong>Username:</strong> help.to.all | <strong>ID:</strong> 16690</p>
+                <p><strong>Registration Date:</strong> March 21, 2017 13:48:48</p>
+                <p><strong>Last Login:</strong> March 31, 2017 15:01:25</p>
+                <p><strong>Account Type:</strong> Paid</p>
+                <p><strong>Membership Expiration:</strong> No Membership Found</p>
+                <p><strong>Referral Link:</strong> <a href="https://www.thetrafficincome.com/ref/16690">https://www.thetrafficincome.com/ref/16690</a></p>
+            </div>
+        </div>
+
+        <!-- Server Time Section -->
+        <div class="col-md-4">
+            <div class="server-time">
+                <i class="fas fa-calendar-alt"></i> Current Server Time: March 31, 2017 15:44:34
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="#" class="btn btn-info"><i class="fas fa-calendar-check"></i> You Are Yet To Surf 10 Ads Today!</a>
+                <a href="#" class="btn btn-warning"><i class="fas fa-hand-point-right"></i> You Can Surf Now</a>
+                <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Buy Adpack</a>
+                <a href="#" class="btn btn-success"><i class="fas fa-dollar-sign"></i> Buy Surf Free Units</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="grid-container">
+                <!-- Active Shares -->
+                <div class="info-box orange">
+                    <i class="fas fa-chart-pie"></i>
+                    <p>Active Shares</p>
+                    <p>50</p>
+                </div>
+                
+                <!-- My Sponsor -->
+                <div class="info-box blue">
+                    <i class="fas fa-user-tie"></i>
+                    <p>My Sponsor</p>
+                    <p>thetrafficincomeadmin</p>
+                </div>
+
+                <!-- My Referrals -->
+                <div class="info-box blue">
+                    <i class="fas fa-users"></i>
+                    <p>My Referrals</p>
+                    <p>3</p>
+                </div>
+
+                <!-- Cash Balance -->
+                <div class="info-box orange">
+                    <i class="fas fa-wallet"></i>
+                    <p>Cash Balance</p>
+                    <p>$1,000 USD</p>
+                </div>
+
+                <!-- Earning Balance -->
+                <div class="info-box blue">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <p>Earning Balance</p>
+                    <p>$919.15 USD</p>
+                </div>
+
+                <!-- Repurchase Balance -->
+                <div class="info-box orange">
+                    <i class="fas fa-redo"></i>
+                    <p>Repurchase Balance</p>
+                    <p>$919.15 USD</p>
+                </div>
+
+                <!-- Commission Balance -->
+                <div class="info-box orange">
+                    <i class="fas fa-coins"></i>
+                    <p>Commission Balance</p>
+                    <p>$6,170 USD</p>
+                </div>
+
+                <!-- Total Deposit -->
+                <div class="info-box blue">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <p>Total Deposit</p>
+                    <p>$23.00 USD</p>
+                </div>
+
+                <!-- Total Withdraw -->
+                <div class="info-box blue">
+                    <i class="fas fa-hand-holding"></i>
+                    <p>Total Withdraw</p>
+                    <p>$1,000 USD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Plan Name</th>
+                    <th>Active Ad Pack</th>
+                    <th>Expired Ad Pack</th>
+                    <th>Total Ad Pack Earning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Plan 1</td>
+                    <td><span class="icon-placeholder">30</span></td>
+                    <td>0</td>
+                    <td>$11.22</td>
+                </tr>
+                <tr>
+                    <td>Plan 2</td>
+                    <td><span class="icon-placeholder">45</span></td>
+                    <td>0</td>
+                    <td>$7.28</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>75</td>
+                    <td>0</td>
+                    <td>$11.948</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<div class="stats-section">
+    <div class="container">
+        <div class="row">
+            <!-- Stat 1 -->
+            <div class="col-md-2 stat-box">
+                <i class="fas fa-calendar-day"></i>
+                <h5>Launch Date</h5>
+                <p>September 25, 2016</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="col-md-2 stat-box">
+                <i class="fas fa-users"></i>
+                <h5>Total Members</h5>
+                <p>4792</p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="col-md-2 stat-box">
+                <i class="fas fa-dollar-sign"></i>
+                <h5>Total Payouts</h5>
+                <p>$64128.48</p>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="col-md-2 stat-box">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h5>Last Payout</h5>
+                <p>$20</p>
+            </div>
+
+            <!-- Stat 5 -->
+            <div class="col-md-2 stat-box">
+                <i class="fas fa-chart-line"></i>
+                <h5>Commission Paid</h5>
+                <p>40804.92</p>
+            </div>
+
+            <!-- Stat 6 -->
+            <div class="col-md-2 stat-box">
+                <i class="fas fa-chart-bar"></i>
+                <h5>Alexa Rank</h5>
+                <p>62651</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer Section -->
+<div class="footer-section">
+    <div class="container">
+        <div class="row">
+            <!-- Traffic Income -->
+            <div class="col-md-4 footer-box">
+                <i class="fas fa-globe"></i>
+                <h5>Ad Web Pack</h5>
+                <p>Earnings Disclaimer</p>
+            </div>
+
+            <!-- Safety -->
+            <div class="col-md-4 footer-box">
+                <h5>SAFETY</h5>
+                <p><i class="fas fa-certificate"></i> Registered Business Entity</p>
+                <p><i class="fas fa-lock"></i> SSL Secured and Licensed Script</p>
+                <p><i class="fas fa-shield-alt"></i> DDOS Protected Hosting</p>
+            </div>
+
+            <!-- We Accept -->
+            <div class="col-md-4 footer-box">
+                <h5>WE ACCEPT</h5>
+                <div class="payment-icons">
+                    <img src="https://via.placeholder.com/100x30?text=Payza" alt="Payza">
+                    <img src="https://via.placeholder.com/100x30?text=Paypal" alt="Paypal">
+                    <img src="https://via.placeholder.com/100x30?text=Payeer" alt="Payeer">
+                    <img src="https://via.placeholder.com/100x30?text=Perfect+Money" alt="Perfect Money">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Bottom Section -->
+<div class="footer-bottom">
+    <div class="container">
+        <p>Copyright © 2024 Adwebpack.com. All Rights Reserved</p>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
